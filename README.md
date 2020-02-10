@@ -1,5 +1,11 @@
 ## Number into word
-In this project we are converting number into word.
+In this project we are converting number into word.<br /><br />
+For Example : <br />
+1 : One<br />
+11 : ten<br />
+101 : one hundred one<br />
+101345 : one lakh one thousand three hundred forty five<br />
+99999999 : nine crore ninety nine lakh ninety nine thousand nine hundred ninety nine
 
 ## Available Scripts
 
