@@ -35,7 +35,27 @@ describe("Convert Number Into Words", ()=>{
     expect(numberToWord(999).trim()).toBe("nine hundred ninety nine");
   });
   
+  test('should return 20222 in word', () => {
+    expect(numberToWord(20222).trim()).toBe("twenty thousand two hundred twenty two");
+  });
+
+  test('should return 99222 in word', () => {
+    expect(numberToWord(99222).trim()).toBe("ninety nine thousand two hundred twenty two");
+  });
+  
+  test('should return 999999 in word', () => {
+    expect(numberToWord(999999).trim()).toBe("nine lakh ninety nine thousand nine hundred ninety nine");
+  });
+  
+  test('should return 99999932 in word', () => {
+    expect(numberToWord(99999932).trim()).toBe("nine crore ninety nine lakh ninety nine thousand nine hundred thirty two");
+  });
+
   test('for negative numbers should be Is not a number', () => {
     expect(numberToWord(-1)).toBe("Is not a number");
   }); 
+  test('should return blank string if number is more than 9 digit', () => {
+    expect(numberToWord(9999999999)).toBe("");
+  }); 
+  
 })

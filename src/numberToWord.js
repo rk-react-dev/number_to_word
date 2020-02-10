@@ -37,10 +37,9 @@ tens = [
     "ninety"
   ],
 
-  scales=["hundred"]
-
+  scales = ["hundred", "thousand", "lakh", "crore"];
   /* Is number is not positive number? */
-  if(parseInt(numString,10) === NaN || parseInt(numString,10) < 0)
+  if(parseInt(numString,10) < 0)
   {
       return "Is not a number"
   }
@@ -49,13 +48,31 @@ tens = [
     return "zero";
   }
 
-let words=[],word, ints;
+ let start = numString.length,
+  chunks=[], end, chunksLen, words, i, chunk, word, ints;
 
+  /* split into chunks 3 and 2 digit */
+  while (start > 0) {
+    end = start;
+    if (start === numString.length) {
+      chunks.push(numString.slice((start = Math.max(0, start - 3)), end));
+    } else {
+      chunks.push(numString.slice((start = Math.max(0, start - 2)), end));
+    }
+  }
+
+chunksLen = chunks.length;
+/* if number gretor than scales then return blank string */
+if (chunksLen > scales.length) {
+    return "";
+}
+words=[];
+
+for (i = 0; i < chunksLen; i++) {
+chunk = parseInt(chunks[i], 10);
+if (chunk) {
 /* split number string into array of integer in reverse*/
- ints = numString
-        .split("")
-        .reverse()
-        .map(parseFloat);
+ ints = chunks[i].split("").reverse().map(parseFloat);
 
 if (ints[1] === 1) {
     ints[0] += 10;
@@ -64,6 +81,10 @@ if (ints[1] === 1) {
  /* add unit word if array item exists */
  if (units[ints[0]]) {
     word = units[ints[0]];
+    word = i !== 0 ? word + " " + scales[i] : word;
+    words.push(word);
+  } else if(chunksLen > 1) {
+    word = scales[i];
     words.push(word);
   }
 
@@ -76,7 +97,8 @@ if (ints[1] === 1) {
     word = units[ints[2]];
     words.push(word + " " + scales[0]);
   }
-
+}
+}
 return words.reverse().join(" ");
 }
 
