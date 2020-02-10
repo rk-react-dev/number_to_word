@@ -27,8 +27,15 @@ describe("Convert Number Into Words", ()=>{
     expect(numberToWord(99).trim()).toBe("ninety nine");
   });
 
-  test('for negative numbers should be undefined', () => {
-    expect(numberToWord(-1)).toBe(undefined);
+  test('should return 205 in word', () => {
+    expect(numberToWord(205).trim()).toBe("two hundred five");
   });
 
+  test('should return 999 in word', () => {
+    expect(numberToWord(999).trim()).toBe("nine hundred ninety nine");
+  });
+  
+  test('for negative numbers should be Is not a number', () => {
+    expect(numberToWord(-1)).toBe("Is not a number");
+  }); 
 })
