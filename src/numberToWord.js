@@ -41,7 +41,7 @@ tens = [
   /* Is number is not positive number? */
   if(parseInt(numString,10) < 0)
   {
-      return "Is not a number"
+      return "Given number is negative number"
   }
    /* Is number zero? */
    if (parseInt(numString, 10) === 0) {

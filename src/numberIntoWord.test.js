@@ -51,8 +51,8 @@ describe("Convert Number Into Words", ()=>{
     expect(numberToWord(99999932).trim()).toBe("nine crore ninety nine lakh ninety nine thousand nine hundred thirty two");
   });
 
-  test('for negative numbers should be Is not a number', () => {
-    expect(numberToWord(-1)).toBe("Is not a number");
+  test('for negative numbers should be Given number is negative number', () => {
+    expect(numberToWord(-1)).toBe("Given number is negative number");
   }); 
   test('should return blank string if number is more than 9 digit', () => {
     expect(numberToWord(9999999999)).toBe("");
