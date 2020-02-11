@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">      
      <h1>Convert Number into words</h1>     
-     <input onChange={onChangeEvent} id="input-number"></input>
+     <input type="number" onChange={onChangeEvent} id="input-number"></input>
      <h2>{word}</h2>
     </div>
   );
