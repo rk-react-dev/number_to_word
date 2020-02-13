@@ -3,7 +3,7 @@ In this project we are converting number to word.<br /><br />
 Between 0 to 999999999.<br />
 For Example : <br />
 1 : One<br />
-11 : ten<br />
+11 : eleven<br />
 101 : one hundred one<br />
 101345 : one lakh one thousand three hundred forty five<br />
 99999999 : nine crore ninety nine lakh ninety nine thousand nine hundred ninety nine
